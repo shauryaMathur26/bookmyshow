@@ -4,18 +4,16 @@ import com.scaler.bookmyshow.enums.BookingStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
-import sun.jvm.hotspot.debugger.cdbg.BaseClass;
 
 import java.util.Date;
 import java.util.List;
 
 @Data
-@Entity
+@Entity(name = "bookings")
 public class Booking extends BaseModel{
 
     //(1,CANCEL),(2,BOOKED)
@@ -45,11 +43,9 @@ public class Booking extends BaseModel{
     @OneToMany
     private List<Payment> payments;
 
-
-
 }
 
 
 // ORM - Object Relation Mapping
 // JPA - Java Persistence API - standard/guidelines set by Java to achieve ORM techniques (RBI Guidelines)
-// Hibernate - one of the most popular implementation is hibernate (ORM Tool) -> YesBank
+// Hibernate - one of the most popular implementations is Hibernate (ORM Tool) -> YesBank
